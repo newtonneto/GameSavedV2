@@ -5,14 +5,16 @@ import { RawgGameInList } from '../../../models/responses/rawg-get-games.respons
 
 const useHelper = () => {
   const [games, setGames] = useState<RawgGameInList[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
   const nextPage = useRef<string | null>(null);
 
   useEffect(() => {
-    // callGetGames();
+    callGetGames();
   }, []);
 
   const callGetGames = async () => {
     try {
+      setLoading(true);
       const response = await getGames(nextPage.current);
 
       if (response?.data.next) {
@@ -27,9 +29,11 @@ const useHelper = () => {
     } catch (error) {
       console.error(error);
     }
+
+    setLoading(false);
   };
 
-  return { games, callGetGames };
+  return { games, loading, callGetGames };
 };
 
 export default useHelper;

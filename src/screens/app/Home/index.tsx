@@ -7,11 +7,11 @@ import LoadingComponent from '../../../components/Loading';
 import styles from './styles';
 
 const Home: FC = () => {
-  const { games, callGetGames } = useHelper();
+  const { games, loading, callGetGames } = useHelper();
 
   return (
     <View>
-      <LoadingComponent />
+      {loading && <LoadingComponent />}
       <FlatList
         data={games}
         renderItem={({ item }) => (
