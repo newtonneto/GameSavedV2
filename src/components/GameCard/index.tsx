@@ -16,9 +16,7 @@ const GameCardComponent: FC<GameCardProps> = ({
   return (
     <Pressable style={styles.container} onPress={() => navigate(id)}>
       <Image source={{ uri: img }} alt="" style={styles.image} />
-      <Heading color="#FF00FF" style={styles.title}>
-        {title}
-      </Heading>
+      <Heading style={styles.title}>{title}</Heading>
     </Pressable>
   );
 };

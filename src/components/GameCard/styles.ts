@@ -1,8 +1,10 @@
 import { StyleSheet } from 'react-native';
 
+import { CORAL } from '../../utils/theme';
+
 const styles = StyleSheet.create({
   container: {
-    borderColor: '#FF00FF',
+    borderColor: CORAL,
     borderWidth: 3,
     borderRadius: 20,
   },
@@ -14,7 +16,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
   },
-  title: { marginHorizontal: 5, marginVertical: 10 },
+  title: { marginHorizontal: 5, marginVertical: 10, color: CORAL },
 });
 
 export default styles;

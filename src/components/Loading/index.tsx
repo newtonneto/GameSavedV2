@@ -20,7 +20,7 @@ const LoadingComponent: FC = () => {
       <View style={styles.content}>
         {loadindText.current.map((letter, index) => (
           <Animated.Text
-            key={index}
+            key={`${letter} - ${index}`}
             style={[styles.text, indexToShake === index ? shakeStyle : null]}>
             {letter}
           </Animated.Text>
