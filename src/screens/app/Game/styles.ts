@@ -40,15 +40,6 @@ const styles = StyleSheet.create({
     textAlign: 'justify',
     paddingBottom: 100,
   },
-  menu: {
-    backgroundColor: DIM_GRAY,
-  },
-  menuLabel: {
-    color: COSMIT_LATTE,
-  },
-  fab: {
-    backgroundColor: CORAL,
-  },
 });
 
 export default styles;
