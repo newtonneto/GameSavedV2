@@ -6,12 +6,17 @@ import styles from './styles';
 import GameCardComponent from '../../../components/GameCard';
 import LoadingListComponent from '../../../components/LoadingList';
 import ContainerComponent from '../../../components/Container';
+import Search from './Search';
 
 const Home: FC = () => {
   const { games, loading, listLoading, callGetGames } = useHelper();
 
   const itemSeparatorComponent = () => {
     return <View style={styles.divider} />;
+  };
+
+  const listHeaderComponent = () => {
+    return <Search />;
   };
 
   const listFooterComponent = () => {
@@ -30,6 +35,7 @@ const Home: FC = () => {
           />
         )}
         ItemSeparatorComponent={itemSeparatorComponent}
+        ListHeaderComponent={listHeaderComponent}
         ListFooterComponent={listFooterComponent}
         keyExtractor={item => item.id.toString()}
         onEndReached={callGetGames}
